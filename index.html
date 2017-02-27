@@ -2,577 +2,846 @@
 <html>
 <head>
 <meta charset='utf-8'/>
-<title>Census</title>
+<title>Oscar Dresses</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href='https://fonts.googleapis.com/css?family=Open+Sans|Merriweather+Sans:400,700' rel='stylesheet' type='text/css'>
-<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.js'></script>
-<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.css' rel='stylesheet' />
+</head>
 <style>
 
 body {
-    margin:0;
-    padding:0;
-    background:#fff;
-    -webkit-text-size-adjust: 100%;
-    font-family: Open Sans, Arial, Helvetica, sans-serif;
+	width:100%;
+	font-family: Open Sans, Arial, sans-serif;
+	text-align: center;
+	color:#555;
 }
 
-body a {
-    text-decoration: none;
-    color:#333;
+h2 {
+	margin-bottom: 2px;
+	color:#333;
 }
 
-.mapholder {
-    display:block;
-    margin:auto;
-    position:relative;
-    max-width: 850px;
+.hoverstate {
+	font-size:14px;
+	padding:5px;
+	margin-bottom: 5px;
 }
 
-#map {
-    max-width: 800px;
-    width:100%;
-    margin:auto;
-    display:block;
-    height: 850px;
+.palettewrap {
+	margin:auto;
+	display:block;
+	max-width:800px;
 }
 
-canvas:focus {
-    border:none !important;
-    outline:0;
-    -webkit-box-shadow: none;
-    box-shadow: none;
+.palette {
+	width:1.5%;
+	max-height:330px;
+	display: inline-block;
+	margin: 0px;
+	border-top:2px solid rgba(255,255,255,0);
 }
 
-.mapboxgl-ctrl-bottom-right .mapboxgl-ctrl {
-    display: none;
-    }
-
-.mapboxgl-popup {
-  max-width: 400px;
-  font: 12px/20px Open Sans, Arial, Helvetica, sans-serif;
+.palette:hover {
+	border-color:#000;
 }
 
-.mapboxgl-popup h3{
-    margin-top: 0px;
-  margin-bottom: 2px;
+.dresspack {
+	display:block;
+	margin-top: 20px;
 }
 
-#popup {
-    color:#555;
+.block {
+	height:20px;
+	width:1.5%;
+	display: inline-block;
 }
 
-#mainpoint {
-    font-size:30px;
-    font-weight: bold;
-    text-align: center;
-    margin:5px;
-    margin-bottom: 10px;
+.note {
+	font-size:12px;
+	margin-top: 15px;
 }
 
-#place {
-    font-size:10px;
-    color:#999;
-    line-height: 12px;
+.note p {
+	margin:0px;
 }
 
-#header {
-    font-family:Open Sans, Arial, Helvetica, sans-serif;
-    font-size:12px;
-    color:#333;
-    background:rgba(255,255,255,0);
-    padding:10px;
-    margin:auto;
-    display:block;
-    max-width:500px;
-    text-align: center;
-}
-
-/*#banner {
-    background: #FFF;
-    text-align: center;
-    padding:5px;
-    letter-spacing: .1em;
-    font-family: proxima-nova, Open Sans, Arial, Helvetica, sans-serif;
-    font-weight:500;
-}*/
-
-#headtext {
-    font-size: 20px;
-    line-height: 23px;
-    margin-bottom: 3px;
-    font-weight:bold;
-}
-
-#desc {
-    max-width: 404px;
-    display: block;
-    margin: auto;
-}
-
-/*NOTES*/
-
-.mapnotes {
-  display: block;
-  margin:0 auto;
-  text-align: center;
-  margin-right: 10px;
-  padding-bottom: 10px;
-  color:#555;
-}
-
-.mapnotes p {
-  font-family:Open Sans, Arial, Helvetica, sans-serif;
-  font-size:11px;
-  margin-bottom: -9px;
-}
-
-.mapnotes a {
-    text-decoration: none;
-    color:#555;
-}
-
-/*BUTTONS*/
-
-.prtoggles {
-    text-align: center;
-    padding:10px;
-    margin:auto;
-    display:block;
-}
-
-.prtoggles div {
-    font-family:Open Sans, Arial, Helvetica, sans-serif;
-    font-size: 10px;
-    color:#555;
-    display: inline-block;
-    width: 100px;
-    padding: 7px;
-    margin-bottom: 3px;
-    line-height:12px;
-    border-radius: 2px;
-    background:#fff;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(255,255,255,0.1);
-}
-
-.prtoggles div:hover {
-    opacity:0.85;
-    cursor: pointer;
-}
-
-.prtoggles div.active {
-    opacity:1;
-    background:#fff;
-    cursor: pointer;
-    font-weight: bold;
-    pointer-events:none;
-}
-
-.arrow {
-    position: absolute;
-    top: 194px;
-    left: 48%;
-    width: 75px;
-}
-
-.arrowtxt {
-    position: relative;
-    font-size: 12px;
-    font-weight: bold;
-    right: 105px;
-    text-align: right;
-    top: 58px;
-    width: 100px;
-}
-
-.arrow img {
-    width:100%;
-    -moz-transform: scale(-1, 1);
-    -o-transform: scale(-1, 1);
-    -webkit-transform: scale(-1, 1);
-    transform: scale(-1, 1);
-}
-
-@media (max-width:550px) {
-    #map {
-        height:430px;
-    }
-
-    .arrow {
-        display:none;
-    }
-
-    .mapholder {
-        margin-top:0px;
-    }
-
-    .prtoggles {
-        padding:10px 0;
-    }
-
-    .prtoggles div {
-        width: 100px;
-        padding: 8px;
-        font-size: 9px;
-    }
+.note a {
+	text-decoration: none;
+	color:#555;
 }
 
 </style>
-</head>
 <body>
-<!-- <a href="http://www.mapto.ca/" target="blank"><div id="banner">mapTO</div></a> -->
-<div id="header">
-    <div id="headtext">How every urban centre in Canada changed between census years</div>
-    <div id="desc">Percentage change in population by Census Metropolitan Areas or Census Agglomerations (2011-2016).</div>
-    <div class="toggleholder">
-        <div class="prtoggles">
-            <div id="prbtn" data-id="all" style="background:#efefef" class="active">ALL</div>
-            <div id="prbtn" data-id="Ontario" style="color:#756BB1;background:rgba(117,107,177,0.2)">ONTARIO</div>
-            <div id="prbtn" data-id="British Columbia" style="color:#31A354;background:rgba(49,163,84,0.2)">BRITISH COLUMBIA</div>
-            <div id="prbtn" data-id="Quebec" style="color:#17BECF;background:rgba(23,190,207,0.2)">QUEBEC</div>
-            <div id="prbtn" data-id="Alberta" style="color:#FF3030;background:rgba(255,48,48,0.2)">ALBERTA</div>
-            <div id="prbtn" data-id="Prairies" style="color:#FDAE6B;background:rgba(253,174,107,0.2)">PRAIRIES</div>
-            <div id="prbtn" data-id="Maritimes" style="color:#3182BD;background:rgba(49,130,189,0.2)">MARITIMES</div>
-            <div id="prbtn" data-id="Territories" style="color:#E377C2;background:rgba(227,119,194,0.2)">TERRITORIES</div>
-        </div>
-    </div>
-</div>
-<div class="mapholder">
-    <div class="arrow">
-    <div class="arrowtxt">
-        Try clicking one of the markers!
-    </div>
-    <img src="arrow.gif"></div>
-    <div id='map'></div>
-</div>
-<div class="mapnotes">
-  <p><strong>Sources:</strong> <a href="http://www12.statcan.gc.ca/census-recensement/2016/dp-pd/index-eng.cfm" target="blank">Statistics Canada, Mapbox</p>
-  <p><strong>By:</strong> <a href="http://www.mapto.ca/" target="blank">Bettermaps</a></p>
-  <p>Code on <a href="https://github.com/willymaps/census" target="blank">GitHub</a></p>
-</div>
+<h2>Oscar dress colors</h2>
+<div class="hoverstate">Hover over the dresses to see who it is</div>
+<div class="palettewrap">
+			<div class="palette" title="Blanco Blanca" data-sort="1">
+                
+                
+                <div class="color-row" style="height: 111.0px; background-color: #b9a150"></div>
+                
+                
+                <div class="color-row" style="height: 74.0px; background-color: #ddc973"></div>
+                
+                
+                <div class="color-row" style="height: 68.0px; background-color: #ecd36d"></div>
+                
+                
+                <div class="color-row" style="height: 67.0px; background-color: #9e813e"></div>
+                
+                
+                <div class="color-row" style="height: 13.0px; background-color: #ebc152"></div>
+                
+                
+                <div class="color-row" style="height: 4.0px; background-color: #d15f4f"></div>
+                
+                
+                <div class="color-row" style="height: 3.0px; background-color: #bd7e4f"></div>
+            </div>
+            <div class="palette" title="Sofia Carson" data-id="1">
+                
+                
+                <div class="color-row" style="height: 323.0px; background-color: #d4d5e0"></div>
+                
+                
+                <div class="color-row" style="height: 17.0px; background-color: #8a8986"></div>
+            </div>
+            <div class="palette" title="Olivia Culpo" data-id="1">
+                
+                
+                <div class="color-row" style="height: 336.0px; background-color: #c6c5c2"></div>
+                
+                
+                <div class="color-row" style="height: 4.0px; background-color: #1b1c1d"></div>
+                
+                
+                <div class="color-row" style="height: 1.0px; background-color: #545454"></div>
+            </div>
+            <div class="palette" title="Debbie Matenopoulos" data-id="1">
+                
+                
+                <div class="color-row" style="height: 327.0px; background-color: #eaba9b"></div>
+                
+                
+                <div class="color-row" style="height: 13.0px; background-color: #bb775a"></div>
+            </div>
+            <div class="palette" title="Ruth Negga" data-id="1">
+                
+                
+                <div class="color-row" style="height: 306.0px; background-color: #f64d40"></div>
+                
+                
+                <div class="color-row" style="height: 16.0px; background-color: #f8826b"></div>
+                
+                
+                <div class="color-row" style="height: 13.0px; background-color: #f8957e"></div>
+                
+                
+                <div class="color-row" style="height: 1.0px; background-color: #a0bff8"></div>
+                
+                
+                <div class="color-row" style="height: 1.0px; background-color: #a47a9e"></div>
+                
+                
+                <div class="color-row" style="height: 1.0px; background-color: #bd6a82"></div>
+                
+                
+                <div class="color-row" style="height: 1.0px; background-color: #7f6ecc"></div>
+                
+                
+                <div class="color-row" style="height: 1.0px; background-color: #e05f63"></div>
+                
+                
+                <div class="color-row" style="height: 1.0px; background-color: #d45a74"></div>
+                
+                
+                <div class="color-row" style="height: 0.0px; background-color: #bad7f4"></div>
+            </div>
+            <div class="palette" title="Allison Schroeder" data-id="1">
+                
+                
+                <div class="color-row" style="height: 99.0px; background-color: #5c2d70"></div>
+                
+                
+                <div class="color-row" style="height: 77.0px; background-color: #edcbd3"></div>
+                
+                
+                <div class="color-row" style="height: 41.0px; background-color: #41144a"></div>
+                
+                
+                <div class="color-row" style="height: 39.0px; background-color: #982f3b"></div>
+                
+                
+                <div class="color-row" style="height: 36.0px; background-color: #e14244"></div>
+                
+                
+                <div class="color-row" style="height: 34.0px; background-color: #e9a9b9"></div>
+                
+                
+                <div class="color-row" style="height: 7.0px; background-color: #c53c47"></div>
+                
+                
+                <div class="color-row" style="height: 7.0px; background-color: #792643"></div>
+            </div>
+            <div class="palette" title="Felicity Jones" data-id="1">
+                
+                
+                <div class="color-row" style="height: 340.0px; background-color: #d3cec5"></div>
+            </div>
+            <div class="palette" title="Raphaela Neihausen" data-id="1">
+                
+                
+                <div class="color-row" style="height: 133.0px; background-color: #262c2e"></div>
+                
+                
+                <div class="color-row" style="height: 63.0px; background-color: #b8b6ae"></div>
+                
+                
+                <div class="color-row" style="height: 37.0px; background-color: #9a6c61"></div>
+                
+                
+                <div class="color-row" style="height: 28.0px; background-color: #3a7b8e"></div>
+                
+                
+                <div class="color-row" style="height: 23.0px; background-color: #193850"></div>
+                
+                
+                <div class="color-row" style="height: 20.0px; background-color: #e34e5b"></div>
+                
+                
+                <div class="color-row" style="height: 16.0px; background-color: #47224d"></div>
+                
+                
+                <div class="color-row" style="height: 9.0px; background-color: #ca646b"></div>
+                
+                
+                <div class="color-row" style="height: 8.0px; background-color: #763386"></div>
+                
+                
+                <div class="color-row" style="height: 4.0px; background-color: #edc3bf"></div>
+            </div>
+            <div class="palette" title="Isabelle Huppert" data-id="1">
+                
+                
+                <div class="color-row" style="height: 340.0px; background-color: #e4d1c7"></div>
+            </div>
+            <div class="palette" title="Briana Perez" data-id="1">
+                
+                
+                <div class="color-row" style="height: 340.0px; background-color: #e9e6e2"></div>
+            </div>
+            <div class="palette" title="Hailee Steinfeld" data-id="1">
+                
+                
+                <div class="color-row" style="height: 325.0px; background-color: #ded3cd"></div>
+                
+                
+                <div class="color-row" style="height: 15.0px; background-color: #a59795"></div>
+            </div>
+            <div class="palette" title="Sofia Boutella" data-id="1">
+                
+                
+                <div class="color-row" style="height: 181.0px; background-color: #a99b99"></div>
+                
+                
+                <div class="color-row" style="height: 158.0px; background-color: #e2dbd7"></div>
+                
+                
+                <div class="color-row" style="height: 1.0px; background-color: #934e59"></div>
+                
+                
+                <div class="color-row" style="height: 1.0px; background-color: #573d42"></div>
+            </div>
+            <div class="palette" title="Teresa Palmer" data-id="1">
+                
+                
+                <div class="color-row" style="height: 326.0px; background-color: #c5c1b8"></div>
+                
+                
+                <div class="color-row" style="height: 14.0px; background-color: #846c61"></div>
+            </div>
+            <div class="palette" title="Eva von Bah" data-id="1">
+                
+                
+                <div class="color-row" style="height: 184.0px; background-color: #3a7e90"></div>
+                
+                
+                <div class="color-row" style="height: 150.0px; background-color: #203e4b"></div>
+                
+                
+                <div class="color-row" style="height: 6.0px; background-color: #60758b"></div>
+            </div>
+            <div class="palette" title="Robin Roberts" data-id="1">
+                
+                
+                <div class="color-row" style="height: 195.0px; background-color: #cdaf72"></div>
+                
+                
+                <div class="color-row" style="height: 86.0px; background-color: #a67c4b"></div>
+                
+                
+                <div class="color-row" style="height: 56.0px; background-color: #86562c"></div>
+                
+                
+                <div class="color-row" style="height: 3.0px; background-color: #bbafa2"></div>
+            </div>
+            <div class="palette" title="Karlie Kloss" data-id="1">
+                
+                
+                <div class="color-row" style="height: 340.0px; background-color: #eae7ea"></div>
+            </div>
+            <div class="palette" title="Emma Roberts" data-id="1">
+                
+                
+                <div class="color-row" style="height: 237.0px; background-color: #f0e1cb"></div>
+                
+                
+                <div class="color-row" style="height: 101.0px; background-color: #232723"></div>
+                
+                
+                <div class="color-row" style="height: 2.0px; background-color: #787069"></div>
+            </div>
+            <div class="palette" title="Leslie Mann" data-id="1">
+                
+                
+                <div class="color-row" style="height: 174.0px; background-color: #e8c827"></div>
+                
+                
+                <div class="color-row" style="height: 107.0px; background-color: #f0e353"></div>
+                
+                
+                <div class="color-row" style="height: 60.0px; background-color: #f3ed71"></div>
+            </div>
+            <div class="palette" title="Trudie Styler" data-id="1">
+                
+                
+                <div class="color-row" style="height: 340.0px; background-color: #f1e1c9"></div>
+            </div>
+            <div class="palette" title="Chrissy Teigen" data-id="1">
+                
+                
+                <div class="color-row" style="height: 338.0px; background-color: #f0e5d8"></div>
+                
+                
+                <div class="color-row" style="height: 2.0px; background-color: #b6a087"></div>
+            </div>
+            <div class="palette" title="Taraji Henson" data-id="1">
+                
+                
+                <div class="color-row" style="height: 340.0px; background-color: #160f14"></div>
+            </div>
+            <div class="palette" title="Cynthia Erivo" data-id="1">
+                
+                
+                <div class="color-row" style="height: 225.0px; background-color: #302921"></div>
+                
+                
+                <div class="color-row" style="height: 27.0px; background-color: #726049"></div>
+                
+                
+                <div class="color-row" style="height: 24.0px; background-color: #8f5951"></div>
+                
+                
+                <div class="color-row" style="height: 17.0px; background-color: #b3a27a"></div>
+                
+                
+                <div class="color-row" style="height: 13.0px; background-color: #93b0aa"></div>
+                
+                
+                <div class="color-row" style="height: 12.0px; background-color: #5f2220"></div>
+                
+                
+                <div class="color-row" style="height: 11.0px; background-color: #97744d"></div>
+                
+                
+                <div class="color-row" style="height: 5.0px; background-color: #cba89a"></div>
+                
+                
+                <div class="color-row" style="height: 3.0px; background-color: #ac5b4d"></div>
+                
+                
+                <div class="color-row" style="height: 2.0px; background-color: #a09694"></div>
+            </div>
+            <div class="palette" title="Kirsten Dunst" data-id="1">
+                
+                
+                <div class="color-row" style="height: 340.0px; background-color: #17191c"></div>
+            </div>
+            <div class="palette" title="Mimi Valdes" data-id="1">
+                
+                
+                <div class="color-row" style="height: 247.0px; background-color: #eca693"></div>
+                
+                
+                <div class="color-row" style="height: 93.0px; background-color: #f4c9ad"></div>
+            </div>
+            <div class="palette" title="Mira Pak" data-id="1">
+                
+                
+                <div class="color-row" style="height: 340.0px; background-color: #0d0f11"></div>
+            </div>
+            <div class="palette" title="Ava DuVernay" data-id="1">
+                
+                
+                <div class="color-row" style="height: 340.0px; background-color: #92898a"></div>
+            </div>
+            <div class="palette" title="Jessica Biel" data-id="1">
+                
+                
+                <div class="color-row" style="height: 124.0px; background-color: #a4937b"></div>
+                
+                
+                <div class="color-row" style="height: 86.0px; background-color: #cbbca3"></div>
+                
+                
+                <div class="color-row" style="height: 54.0px; background-color: #947e59"></div>
+                
+                
+                <div class="color-row" style="height: 50.0px; background-color: #785a40"></div>
+                
+                
+                <div class="color-row" style="height: 26.0px; background-color: #ebe8d8"></div>
+            </div>
+            <div class="palette" title="Octavia Spencer" data-id="1">
+                
+                
+                <div class="color-row" style="height: 340.0px; background-color: #c5bdb5"></div>
+            </div>
+            <div class="palette" title="Jessica Oyelowo" data-id="1">
+                
+                
+                <div class="color-row" style="height: 340.0px; background-color: #d8c1a8"></div>
+            </div>
+            <div class="palette" title="Tracy Pollan" data-id="1">
+                
+                
+                <div class="color-row" style="height: 334.0px; background-color: #3f47d1"></div>
+                
+                
+                <div class="color-row" style="height: 6.0px; background-color: #5459ca"></div>
+            </div>
+            <div class="palette" title="Janelle Monae" data-id="1">
+                
+                
+                <div class="color-row" style="height: 242.0px; background-color: #3e373a"></div>
+                
+                
+                <div class="color-row" style="height: 37.0px; background-color: #7d726c"></div>
+                
+                
+                <div class="color-row" style="height: 25.0px; background-color: #a8a4a1"></div>
+                
+                
+                <div class="color-row" style="height: 21.0px; background-color: #dcdad9"></div>
+                
+                
+                <div class="color-row" style="height: 9.0px; background-color: #ad9982"></div>
+                
+                
+                <div class="color-row" style="height: 4.0px; background-color: #946b57"></div>
+                
+                
+                <div class="color-row" style="height: 3.0px; background-color: #6b404d"></div>
+            </div>
+            <div class="palette" title="Kelly Ripa" data-id="1">
+                
+                
+                <div class="color-row" style="height: 307.0px; background-color: #23305e"></div>
+                
+                
+                <div class="color-row" style="height: 32.0px; background-color: #171621"></div>
+                
+                
+                <div class="color-row" style="height: 1.0px; background-color: #53628d"></div>
+            </div>
+            <div class="palette" title="Busy Philipps" data-id="1">
+                
+                
+                <div class="color-row" style="height: 290.0px; background-color: #121315"></div>
+                
+                
+                <div class="color-row" style="height: 20.0px; background-color: #cb9e87"></div>
+                
+                
+                <div class="color-row" style="height: 18.0px; background-color: #3b3632"></div>
+                
+                
+                <div class="color-row" style="height: 13.0px; background-color: #7b6357"></div>
+            </div>
+            <div class="palette" title="Dakota Johnson" data-id="1">
+                
+                
+                <div class="color-row" style="height: 325.0px; background-color: #f1dfb8"></div>
+                
+                
+                <div class="color-row" style="height: 15.0px; background-color: #c5915b"></div>
+            </div>
+            <div class="palette" title="Nicole Kidman" data-id="1">
+                
+                
+                <div class="color-row" style="height: 340.0px; background-color: #dcba9b"></div>
+            </div>
+            <div class="palette" title="Scarlett Johansson" data-id="1">
+                
+                
+                <div class="color-row" style="height: 257.0px; background-color: #b86a68"></div>
+                
+                
+                <div class="color-row" style="height: 44.0px; background-color: #dd9478"></div>
+                
+                
+                <div class="color-row" style="height: 27.0px; background-color: #5f423d"></div>
+                
+                
+                <div class="color-row" style="height: 12.0px; background-color: #ac8776"></div>
+                
+                
+                <div class="color-row" style="height: 2.0px; background-color: #c09368"></div>
+            </div>
+            <div class="palette" title="Alicia Vikander" data-id="1">
+                
+                
+                <div class="color-row" style="height: 340.0px; background-color: #151f2c"></div>
+            </div>
+            <div class="palette" title="Halle Berry" data-id="1">
+                
+                
+                <div class="color-row" style="height: 173.0px; background-color: #c69871"></div>
+                
+                
+                <div class="color-row" style="height: 99.0px; background-color: #835740"></div>
+                
+                
+                <div class="color-row" style="height: 52.0px; background-color: #342620"></div>
+                
+                
+                <div class="color-row" style="height: 16.0px; background-color: #5f4435"></div>
+            </div>
+            <div class="palette" title="Willow Bay" data-id="1">
+                
+                
+                <div class="color-row" style="height: 334.0px; background-color: #3a2785"></div>
+                
+                
+                <div class="color-row" style="height: 6.0px; background-color: #534493"></div>
+            </div>
+            <div class="palette" title="Susan Geston" data-id="1">
+                
+                
+                <div class="color-row" style="height: 216.0px; background-color: #f95863"></div>
+                
+                
+                <div class="color-row" style="height: 124.0px; background-color: #e7393f"></div>
+            </div>
+            <div class="palette" title="Priyanka Chopra" data-id="1">
+                
+                
+                <div class="color-row" style="height: 212.0px; background-color: #b8aea8"></div>
+                
+                
+                <div class="color-row" style="height: 128.0px; background-color: #e1d8d2"></div>
+            </div>
+            <div class="palette" title="Emma Stone" data-id="1">
+                
+                
+                <div class="color-row" style="height: 340.0px; background-color: #c8a68d"></div>
+            </div>
+            <div class="palette" title="Kate Arrington">
+                
+                
+                <div class="color-row" style="height: 340.0px; background-color: #131519"></div>
+            </div>
+            <div class="palette" title="Amanda Anka" data-id="1">
+                
+                
+                <div class="color-row" style="height: 338.0px; background-color: #c9bcb3"></div>
+                
+                
+                <div class="color-row" style="height: 2.0px; background-color: #67614f"></div>
+            </div>
+            <div class="palette" title="Luciana Barroso" data-id="1">
+                
+                
+                <div class="color-row" style="height: 124.0px; background-color: #584e4b"></div>
+                
+                
+                <div class="color-row" style="height: 110.0px; background-color: #a8a299"></div>
+                
+                
+                <div class="color-row" style="height: 100.0px; background-color: #9a8572"></div>
+                
+                
+                <div class="color-row" style="height: 7.0px; background-color: #1d1513"></div>
+            </div>
+            <div class="palette" title="Ginnifer Goodwin" data-id="1">
+                
+                
+                <div class="color-row" style="height: 138.0px; background-color: #c02821"></div>
+                
+                
+                <div class="color-row" style="height: 104.0px; background-color: #da2b24"></div>
+                
+                
+                <div class="color-row" style="height: 98.0px; background-color: #a7241e"></div>
+            </div>
+            <div class="palette" title="Laura Dern" data-id="1">
+                
+                
+                <div class="color-row" style="height: 340.0px; background-color: #26252c"></div>
+            </div>
+            <div class="palette" title="Shanna Evans" data-id="1">
+                
+                
+                <div class="color-row" style="height: 298.0px; background-color: #1d1515"></div>
+                
+                
+                <div class="color-row" style="height: 30.0px; background-color: #463a33"></div>
+                
+                
+                <div class="color-row" style="height: 13.0px; background-color: #7c6754"></div>
+            </div>
+            <div class="palette" title="Lauren Hashian" data-id="1">
+                
+                
+                <div class="color-row" style="height: 228.0px; background-color: #d0ae9f"></div>
+                
+                
+                <div class="color-row" style="height: 99.0px; background-color: #c89477"></div>
+                
+                
+                <div class="color-row" style="height: 12.0px; background-color: #bfa19e"></div>
+                
+                
+                <div class="color-row" style="height: 1.0px; background-color: #8c5946"></div>
+            </div>
+            <div class="palette" title="Charlize Theron" data-id="1">
+                
+                
+                <div class="color-row" style="height: 303.0px; background-color: #292b25"></div>
+                
+                
+                <div class="color-row" style="height: 37.0px; background-color: #888982"></div>
+            </div>
+            <div class="palette" title="Brie Larson" data-id="1">
+                
+                
+                <div class="color-row" style="height: 340.0px; background-color: #060606"></div>
+            </div>
+            <div class="palette" title="Salma Hayek" data-id="1">
+                
+                
+                <div class="color-row" style="height: 327.0px; background-color: #16191e"></div>
+                
+                
+                <div class="color-row" style="height: 13.0px; background-color: #675858"></div>
+            </div>
+            <div class="palette" title="Katie McGrath" data-id="1">
+                
+                
+                <div class="color-row" style="height: 340.0px; background-color: #222427"></div>
+            </div>
+            <div class="palette" title="Katharine McPhee" data-id="1">
+                
+                
+                <div class="color-row" style="height: 202.0px; background-color: #342c38"></div>
+                
+                
+                <div class="color-row" style="height: 138.0px; background-color: #090c12"></div>
+            </div>
+            <div class="palette" title="Kayla Vaughn" data-id="1">
+                
+                
+                <div class="color-row" style="height: 338.0px; background-color: #1e1e27"></div>
+                
+                
+                <div class="color-row" style="height: 2.0px; background-color: #78787f"></div>
+            </div>
+            <div class="palette" title="Rosalind Ross" data-id="1">
+                
+                
+                <div class="color-row" style="height: 340.0px; background-color: #c3c8c3"></div>
+            </div>
+            <div class="palette" title="Tanya Lapointe">
+                
+                
+                <div class="color-row" style="height: 340.0px; background-color: #0f1116"></div>
+            </div>
+            <div class="palette" title="Pauletta Washington">
+                
+                
+                <div class="color-row" style="height: 120.0px; background-color: #942433"></div>
+                
+                
+                <div class="color-row" style="height: 101.0px; background-color: #792131"></div>
+                
+                
+                <div class="color-row" style="height: 67.0px; background-color: #c02428"></div>
+                
+                
+                <div class="color-row" style="height: 51.0px; background-color: #b2282f"></div>
+                
+                
+                <div class="color-row" style="height: 1.0px; background-color: #c18493"></div>
+            </div>
+            <div class="palette" title="Amelia Warner" data-id="1">
+                
+                
+                <div class="color-row" style="height: 340.0px; background-color: #cba7a7"></div>
+            </div>
+            <div class="palette" title="Miranda July" data-id="1">
+                
+                
+                <div class="color-row" style="height: 112.0px; background-color: #3e3635"></div>
+                
+                
+                <div class="color-row" style="height: 89.0px; background-color: #91837b"></div>
+                
+                
+                <div class="color-row" style="height: 66.0px; background-color: #665b56"></div>
+                
+                
+                <div class="color-row" style="height: 42.0px; background-color: #191919"></div>
+                
+                
+                <div class="color-row" style="height: 20.0px; background-color: #ddcec8"></div>
+                
+                
+                <div class="color-row" style="height: 3.0px; background-color: #6f333c"></div>
+                
+                
+                <div class="color-row" style="height: 3.0px; background-color: #9fa9cb"></div>
+                
+                
+                <div class="color-row" style="height: 2.0px; background-color: #93b6f3"></div>
+                
+                
+                <div class="color-row" style="height: 2.0px; background-color: #b34f53"></div>
+                
+                
+                <div class="color-row" style="height: 1.0px; background-color: #db464f"></div>
+            </div>
+            <div class="palette" title="Naomie Harris" data-id="1">
+                
+                
+                <div class="color-row" style="height: 340.0px; background-color: #ece4d8"></div>
+            </div>
 
-<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+</div>
+<div class="note">
+	<p><b>Source:</b> Getty Images, TinEye Labs</p>
+	<p><b>Note:</b> A sample of each dress was dropped into TinEye's Color Extraction tool.</p>
+	<p><b>By:</b> <a href="https://twitter.com/willy_maps" target="blank">William Davis</a></p>
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
 <script>
-mapboxgl.accessToken = 'pk.eyJ1Ijoid2lsbGlhbWJlbmRhdmlzIiwiYSI6IlVrb3BGVzQifQ.jeHxDCnpXXvAXKfAFEYG-A';
 
-var bounds = [
-    [-1,-4],
-    [7,4]
-];
+$( ".palette[title='Blanco Blanca']" ).attr('data-sort', 13);
+$( ".palette[title='Sofia Carson']" ).attr('data-sort', 11.5);
+$( ".palette[title='Olivia Culpo']" ).attr('data-sort', 32);
+$( ".palette[title='Debbie Matenopoulos']" ).attr('data-sort', 18);
+$( ".palette[title='Ruth Negga']" ).attr('data-sort', 4);
+$( ".palette[title='Susan Geston']" ).attr('data-sort', 6);
+$( ".palette[title='Allison Schroeder']" ).attr('data-sort', 8);
+$( ".palette[title='Felicity Jones']" ).attr('data-sort', 36.5);
+$( ".palette[title='Raphaela Neihausen']" ).attr('data-sort', 41);
+$( ".palette[title='Isabelle Huppert']" ).attr('data-sort', 28);
+$( ".palette[title='Brianna Perez']" ).attr('data-sort', 0);
+$( ".palette[title='Hailee Steinfeld']" ).attr('data-sort', 29);
+$( ".palette[title='Sofia Boutella']" ).attr('data-sort', 30.5);
+$( ".palette[title='Teresa Palmer']" ).attr('data-sort', 35);
+$( ".palette[title='Eva von Bah']" ).attr('data-sort', 12);
+$( ".palette[title='Robin Roberts']" ).attr('data-sort', 14);
+$( ".palette[title='Karlie Kloss']" ).attr('data-sort', 11.6);
+$( ".palette[title='Emma Roberts']" ).attr('data-sort', 24);
+$( ".palette[title='Leslie Mann']" ).attr('data-sort', 17);
+$( ".palette[title='Trudie Styler']" ).attr('data-sort', 26);
+$( ".palette[title='Chrissy Teigen']" ).attr('data-sort', 27);
+$( ".palette[title='Taraji Henson']" ).attr('data-sort', 50);
+$( ".palette[title='Kirsten Dunst']" ).attr('data-sort', 47);
+$( ".palette[title='Mimi Valdes']" ).attr('data-sort', 5);
+$( ".palette[title='Mira Pak']" ).attr('data-sort', 49);
+$( ".palette[title='Ava DuVernay']" ).attr('data-sort', 31);
+$( ".palette[title='Jessica Biel']" ).attr('data-sort', 15);
+$( ".palette[title='Octavia Spencer']" ).attr('data-sort', 36);
+$( ".palette[title='Jessica Oyelowo']" ).attr('data-sort', 22);
+$( ".palette[title='Tracy Pollan']" ).attr('data-sort', 11);
+$( ".palette[title='Janelle Monae']" ).attr('data-sort', 39);
+$( ".palette[title='Kelly Ripa']" ).attr('data-sort', 10);
+$( ".palette[title='Busy Philipps']" ).attr('data-sort', 48);
+$( ".palette[title='Dakota Johnson']" ).attr('data-sort', 25);
+$( ".palette[title='Nicole Kidman']" ).attr('data-sort', 19);
+$( ".palette[title='Scarlett Johansson']" ).attr('data-sort', 2);
+$( ".palette[title='Alicia Vikander']" ).attr('data-sort', 10.5);
+$( ".palette[title='Halle Berry']" ).attr('data-sort', 16);
+$( ".palette[title='Willow Bay']" ).attr('data-sort', 9);
+$( ".palette[title='Priyanka Chopra']" ).attr('data-sort', 30);
+$( ".palette[title='Emma Stone']" ).attr('data-sort', 20);
+$( ".palette[title='Kate Arrington']" ).attr('data-sort', 49);
+$( ".palette[title='Amanda Anka']" ).attr('data-sort', 30.6);
+$( ".palette[title='Luciana Barroso']" ).attr('data-sort', 36.6);
+$( ".palette[title='Ginnifer Goodwin']" ).attr('data-sort', 3);
+$( ".palette[title='Laura Dern']" ).attr('data-sort', 43);
+$( ".palette[title='Shanna Evans']" ).attr('data-sort', 46);
+$( ".palette[title='Lauren Hashian']" ).attr('data-sort', 21);
+$( ".palette[title='Charlize Theron']" ).attr('data-sort', 40);
+$( ".palette[title='Brie Larson']" ).attr('data-sort', 52);
+$( ".palette[title='Salma Hayek']" ).attr('data-sort', 45);
+$( ".palette[title='Katie McGrath']" ).attr('data-sort', 44);
+$( ".palette[title='Katharine McPhee']" ).attr('data-sort', 42);
+$( ".palette[title='Kayla Vaughn']" ).attr('data-sort', 45);
+$( ".palette[title='Rosalind Ross']" ).attr('data-sort', 34);
+$( ".palette[title='Tanya Lapointe']" ).attr('data-sort', 51);
+$( ".palette[title='Pauletta Washington']" ).attr('data-sort', 7);
+$( ".palette[title='Amelia Warner']" ).attr('data-sort', 1);
+$( ".palette[title='Miranda July']" ).attr('data-sort', 37);
+$( ".palette[title='Naomie Harris']" ).attr('data-sort', 28);
+$( ".palette[title='Cynthia Erivo']" ).attr('data-sort', 43.5);
 
-var width = document.documentElement.clientWidth;
 
-function getZoom(width) {
-        if (width > 550) {
-                return 6.5;
-        }  else {
-                return 5.5;
-        }
-    };
 
-var map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/empty-v8',
-    center: [3, 0],
-    zoom: getZoom(width),
-    minZoom:4,
-    maxZoom:9,
-    bearing:-90,
-    maxBounds: bounds 
+$('.palette').mouseover(function() {
+  	var persontext = $(this).attr('title');
+	$('.hoverstate').html(persontext);
 });
 
-map.scrollZoom.disable();
-map.dragRotate.disable();
-map.touchZoomRotate.disableRotation();
-map.doubleClickZoom.disable();
-map.dragPan.disable();
+var maincolor = $( ".palette" ).find(".color-row:first");
 
-map.on('zoom', function() {
-    if (map.getZoom() > 6.5) {
-        map.dragPan.enable();
-    } else {
-        map.dragPan.disable();
-    }
-});
+var dresses = [];
 
-map.on('load', function() {
+$(maincolor).each(function(index) {
+	var getColor = $(this).css('backgroundColor');
+	hexc(getColor);
 
-    // ADD GRID
-    map.addSource("gridData", {
-        'type': 'geojson',
-        'data': 'grid.geojson'
-    });
+	function hexc(colorval) {
+	    var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+	    delete(parts[0]);
+	    for (var i = 1; i <= 3; ++i) {
+	        parts[i] = parseInt(parts[i]).toString(16);
+	        if (parts[i].length == 1) parts[i] = '0' + parts[i];
+	    }
+	    colordress = '#' + parts.join('');
 
-    map.addLayer({
-        "id": "gridlines",
-        "type": "line",
-        "source": "gridData",
-        "layout": {
-            "line-join": "round",
-            "line-cap": "round"
-        },
-        "paint": {
-            "line-width": 0.5,
-            "line-blur": 1,
-            "line-color": "#555",
-            "line-dasharray": [4,6]
-        }
-    });
-
-    // ADD GRID LABELS
-    map.addSource("gridLabels", {
-        'type': 'geojson',
-        'data': 'grid_labels.geojson'
-    });
-
-    map.addLayer({
-        "id": "gridlabels",
-        "type": "symbol",
-        "source": "gridLabels",
-        "layout": {
-            "text-field": "{name}",
-            "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
-            "text-size": 10,
-            "text-offset": [0, -0.5],
-            "text-anchor": "bottom"
-        },
-        "paint": {
-            "text-color": "#555"
-        }
-    });
-
-    // ADD LINES
-    map.addSource("lineData", {
-        'type': 'geojson',
-        'data': 'lines.geojson'
-    });
-
-    map.addLayer({
-        "id": "poplines",
-        "type": "line",
-        "source": "lineData",
-        "layout": {
-            "line-join": "round",
-            "line-cap": "round"
-        },
-        "paint": styleLine() 
-    });
-
-    // ADD POINTS
-    map.addSource("popData", {
-        'type': 'geojson',
-        'data': 'popchange.geojson'
-    });
-
-    map.addLayer({
-        "id": "poppoints",
-        "type": "circle",
-        "source": "popData",
-        "layout": {},
-        "paint": stylePop()
-        // "paint": stylePop()
-    });
-
-    // STYLE POINTLABELS
-    map.addLayer({
-        "id": "poplabels",
-        "type": "symbol",
-        "source": "popData",
-        "layout": {
-            "visibility": "none",
-            "text-field": "{name}",
-            "text-font": ["Open Sans Regular", "Arial Unicode MS Bold"],
-            "text-size": 10,
-            "text-offset": [1.2, 0],
-            "text-anchor": "left"
-        },
-        "paint": {
-            "text-color": "#555"
-        }
-    });
-
-    function stylePop() {
-        return {
-            "circle-radius": {
-                base: 1.75,
-                stops: [
-                    [4, 2],
-                    [10, 12]
-                    ]
-            },
-            "circle-opacity": 0.85,
-            "circle-stroke-color": "#FFFFFF",
-            "circle-stroke-width": 0.5,
-            "circle-color": {
-                property: 'pr',
-                type: "categorical",
-                stops: [
-
-                    ["Newfoundland and Labrador", "#3182BD"],
-                    ["Prince Edward Island", "#3182BD"],
-                    ["Nova Scotia", "#3182BD"],
-                    ["New Brunswick", "#3182BD"],
-
-                    ["British Columbia", "#31A354"],
-
-                    ["Manitoba", "#FDAE6B"],
-                    ["Saskatchewan", "#FDAE6B"],
-
-                    ["Alberta", "#FF3030"],
-
-                    ["Ontario", "#756BB1"],
-
-                    ["Quebec", "#17BECF"],
-
-                    ["Yukon", "#E377C2"],
-                    ["Northwest Territories", "#E377C2"],
-                    ["Nunavut", "#E377C2"]
-                    
-                ]
-                
-            }
-        }
-    }
-
-    function styleLine() {
-        return {
-            "line-width": 1.5,
-            "line-opacity": 0.5,
-            "line-blur":1,
-            "line-color": {
-                property: 'pr',
-                type: "categorical",
-                stops: [
-
-                    ["Newfoundland and Labrador", "#3182BD"],
-                    ["Prince Edward Island", "#3182BD"],
-                    ["Nova Scotia", "#3182BD"],
-                    ["New Brunswick", "#3182BD"],
-
-                    ["British Columbia", "#31A354"],
-
-                    ["Manitoba", "#FDAE6B"],
-                    ["Saskatchewan", "#FDAE6B"],
-
-                    ["Alberta", "#FF3030"],
-
-                    ["Ontario", "#756BB1"],
-
-                    ["Quebec", "#17BECF"],
-
-                    ["Yukon", "#E377C2"],
-                    ["Northwest Territories", "#E377C2"]
-                    
-                ]
-                
-            }
-        }
-    }
-
-        if (width > 680) {
-            map.setFilter('gridlabels', ["has", 'id']);
-        } else {
-            map.setFilter('gridlabels', ["<=", 'id', 9]);
-            map.setLayoutProperty('poplabels', 'visibility', 'visible');
-        }
+	    return colordress;
+	}
+	dresses.push(colordress);
 
 });
 
-var popup = new mapboxgl.Popup({
-    closeButton: false,
-    closeOnClick: false
-});
+function sortdresses() {
+	var wrapper = $('.palettewrap'),
+	    palettes = wrapper.children('.palette');
 
+	palettes.sort(function(a, b) {
+	    return +$(a).data('sort') - +$(b).data('sort');
+	})
+	.each(function() {
+	    wrapper.append(this);
+	});
+}
 
-map.on('mousemove', function(e) {
-    var features = map.queryRenderedFeatures(e.point, { layers: ['poppoints'] });
-    var feature = features[0];
-
-    map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
-
-    if (!features.length) {
-        popup.remove();
-        return;
-    }
-
-    function numberWithCommas(x) {
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
-
-    function getColor(p) {
-      return p === "Ontario" ? '#756BB1' :
-             p === "Quebec" ? '#17BECF' :
-             p === "Alberta" ? '#FF3030' :
-             p === "British Columbia" ? '#31A354' :
-             p === "Maritimes" ? '#3182BD' :
-             p === "Territories" ? '#E377C2' :
-             p === "Prairies" ? '#FDAE6B' :
-             '#d3d3d3';
-    }
-
-    popup.setLngLat(feature.geometry.coordinates)
-        .setHTML('<div id="popup" class="popup" style="z-index: 10;">' +
-            '<div id="place">' + feature.properties['name'] + ",</div>" +
-            '<div id="place">' + feature.properties['pr'] + "</div>" +
-            '<h3>Per cent Change</h3>' +
-            '<div id="mainpoint" style="color:' + getColor(feature.properties['area']) + '">' + feature.properties['pop_chg'] + '%' + " </div>" +
-            '<div id="number"> 2016:<b> ' + numberWithCommas(feature.properties['pop_2016']) + " </b></div>" +
-            '<div id="number"> 2011:<b> ' + numberWithCommas(feature.properties['pop_2011']) + " </b></div>" +
-            '<div id="number"> Pop diff.:<b> ' + numberWithCommas(feature.properties['pop_2016'] - feature.properties['pop_2011']) + " </b></div>" +
-            '</div>')
-        .addTo(map);
-});
-
-map.on('click', function(e) {
-    var features = map.queryRenderedFeatures(e.point, { layers: ['poppoints'] });
-    
-    if (features.length) {
-        $('.arrow').fadeOut();
-        map.setLayoutProperty('poplabels', 'visibility', 'visible');
-        map.setFilter('gridlabels', ["<=", 'id', 9]);
-        map.flyTo({
-            center: features[0].geometry.coordinates,
-            zoom:9
-        });
-    } else {
-        map.flyTo({
-            center: [3, 0],
-            zoom:getZoom(width)
-        });
-    }
-
-});
-
-$('.prtoggles div').click(function() {
-
-      $('.prtoggles div').removeClass('active');
-      $(this).addClass('active');
-      var data = $(this).attr('data-id');
-
-      if (data === 'all' && width > 680) {
-        map.setLayoutProperty('poplabels', 'visibility', 'none');
-        map.setFilter('poplines', ["has", 'area']);
-        map.setFilter('poppoints', ["has", 'area']);
-        map.setFilter('poplabels', ["has", 'area']);
-        map.setFilter('gridlabels', ["has", 'id']);
-      } else if (data === 'all' && width <= 680) {
-        map.setLayoutProperty('poplabels', 'visibility', 'visible');
-        map.setFilter('poplines', ["has", 'area']);
-        map.setFilter('poppoints', ["has", 'area']);
-        map.setFilter('poplabels', ["has", 'area']);
-        map.setFilter('gridlabels', ["<=", 'id', 9]);
-      } else {
-        map.setLayoutProperty('poplabels', 'visibility', 'visible');
-        map.setFilter('poppoints', ["==", 'area', data]);
-        map.setFilter('poplines', ["==", 'area', data]);
-        map.setFilter('poplabels', ["==", 'area', data]);
-        map.setFilter('gridlabels', ["<=", 'id', 9]);
-      }
-      return false;
-    });
+sortdresses();
 
 </script>
-
 </body>
 </html>
