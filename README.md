@@ -1,11 +1,9 @@
 # census
 
-<strong>A look at the 2016 Canadian Census.</strong>
+<strong>An analysis of oscar dress colours.</strong>
 
-This is an experiment with the Canadian Census and the capabilities of Mapbox GL.
-Link to project: https://willymaps.github.io/census/
+This is an experiment using <a href="http://labs.tineye.com/color/" target="blank">TinEye's Color Extraction tool</a>.
+Link to project: https://willymaps.github.io/oscardress/
 
-![screencap](http://i.imgur.com/Bik9s1a.png)
-
-A link to the post: <a href="http://www.mapto.ca/maps/2017/2/20/census-gl" target="blank">Bettermaps</a>
+![screencap](http://i.imgur.com/veSGgh4.png)
 
