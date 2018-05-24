@@ -1,0 +1,217 @@
+body {
+	font-size:7px;
+	font-family: helvetica, sans-serif;
+  background-color: #000;
+  color:#fff;
+  margin:0;
+}
+
+body h1 {
+  font-weight: 100;
+  font-size:18px;
+  opacity:0;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+#columnWrap {
+  position: relative;
+  height: 680px;
+  display: block;
+  margin: auto;
+  max-width: 1000px;
+  overflow: hidden;
+  z-index:1;
+}
+
+#columnHold {
+  display: block;
+  position: absolute;
+  left: 5%;
+  top: 45px;
+}
+
+
+#columnText {
+  top:20px;
+  font-size:16px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  font-weight: 100;
+  right:5%;
+  position: absolute;
+  display: block;
+  /*height:300px;*/
+  width:300px;
+  padding:20px;
+  /*border:1px solid #fff;*/
+  background-color: #000;
+  z-index:99;
+}
+
+#barHold {
+  display:block;
+  margin: auto;
+  max-width:300px;
+}
+
+#barHold p {
+  font-size: 10px;
+  margin: 0;
+}
+
+#barHold span {
+  display:block;
+  height:4px;
+  background-color: #fff;
+}
+
+
+#textDesc {
+  color:rgba(255,255,255,0.7);
+}
+
+#popup {
+  position: absolute;
+  bottom:-160px;
+  right:5%;
+  background-color: #FFF;
+  color:#333;
+  width:300px;
+  height:85px;
+  font-size:12px;
+  line-height: 15px;
+  letter-spacing: 0.5px;
+  /*font-weight: 100;*/
+  overflow: hidden;
+  padding:20px;
+  z-index:100;
+  -webkit-transition: bottom 1s ;
+  -moz-transition: bottom 1s ;
+  -ms-transition: bottom 1s ;
+  -o-transition: bottom 1s ;
+}
+
+#popup p {
+  margin:5px 0;
+}
+
+#backBtn {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    height: 20px;
+    width: 20px;
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    line-height: 17px;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+    z-index:100;
+    opacity: 0.2;
+}
+
+#backBtn:hover {
+  background-color: #111;
+  cursor: pointer;
+}
+
+#textHed {
+  font-size:20px;
+  line-height: 24px;
+}
+
+.column {
+    float: left;
+    width: 45px;
+    margin:0;
+}
+
+/*.column li:nth-of-type(1) {
+
+}*/
+
+.column ul {
+  padding:0;
+  font-size:14px;
+  color:#333;
+  background-color: rgba(255,255,255,0);
+  text-decoration: none;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+}
+
+.column ul li:first-of-type {
+  margin-top: 5px;
+}
+
+.column li {
+  font-size: 8px;
+  /*padding:1.5% 0;*/
+  width: 40px;
+  letter-spacing: 0.6px;
+  /*height: 10px;*/
+  z-index:1;
+  /*opacity:0;*/
+  border: 1px solid transparent;
+  /*color:rgba(255,255,255,0);*/
+  list-style-type: none;
+  opacity: 0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+}
+
+/* Clear floats after the columns */
+#columnWrap:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#wardHold {
+  position: absolute;
+  visibility: hidden;
+  left: 5%;
+  top: 45px;
+}
+
+#streetviewHold img {
+  width:100%;
+  position: absolute;
+  height:100%;
+  pointer-events: none;
+}
+
+#streetviewImg {
+  visibility: hidden;
+}
+
+#mapviewImg {
+  visibility: hidden;
+  height:50% !important;
+}
+
+#wardHold a {
+  text-decoration: none;
+  opacity: 0.5;
+  color:#fff;
+}
+
+.wards {
+  display: block;
+  width:100%;
+  font-size:10px;
+}
+
+.councillorName {
+  opacity:0.5;
+}
