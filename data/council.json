@@ -1,0 +1,442 @@
+[
+ {
+   "name": "Etobicoke North ",
+   "ward": 1,
+   "firstname": "Vincent",
+   "lastname": "Crisanti",
+   "email": "councillor_crisanti@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-vincent-crisanti/",
+   "phone": "416-392-0205",
+   "count": 7
+ },
+ {
+   "name": "Etobicoke North ",
+   "ward": 2,
+   "firstname": "Michael ",
+   "lastname": "Ford",
+   "email": "councillor_mford@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-michael-ford/",
+   "phone": "416-397-9255",
+   "count": 7
+ },
+ {
+   "name": "Etobicoke Centre",
+   "ward": 3,
+   "firstname": "Stephen ",
+   "lastname": "Holyday",
+   "email": "councillor_holyday@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-stephen-holyday/",
+   "phone": "416-392-4002",
+   "count": 2
+ },
+ {
+   "name": "Etobicoke Centre",
+   "ward": 4,
+   "firstname": "John",
+   "lastname": "Campbell",
+   "email": "Councillor_Campbell@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-john-campbell/",
+   "phone": "416-392-1369",
+   "count": 2
+ },
+ {
+   "name": "Etobicoke-Lakeshore ",
+   "ward": 5,
+   "firstname": "Justin",
+   "lastname": "Di Ciano",
+   "email": "Councillor_DiCiano@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-justin-di-ciano/",
+   "phone": "416-392-4040",
+   "count": 4
+ },
+ {
+   "name": "Etobicoke-Lakeshore ",
+   "ward": 6,
+   "firstname": "Mark",
+   "lastname": "Grimes",
+   "email": "councillor_grimes@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-mark-grimes/",
+   "phone": "416-397-9273",
+   "count": 5
+ },
+ {
+   "name": "York West",
+   "ward": 7,
+   "firstname": "Giorgio",
+   "lastname": "Mammoliti",
+   "email": "councillor_mammoliti@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-giorgio-mammoiliti/",
+   "phone": "416-395-6401",
+   "count": 7
+ },
+ {
+   "name": "York West",
+   "ward": 8,
+   "firstname": "Anthony",
+   "lastname": "Perruzza",
+   "email": "councillor_perruzza@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-anthony-perruzza/",
+   "phone": "416-338-5335",
+   "count": 11
+ },
+ {
+   "name": "York Centre",
+   "ward": 9,
+   "firstname": "Maria",
+   "lastname": "Augimeri",
+   "email": "councillor_augimeri@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-maria-augimeri/",
+   "phone": "416-392-4021",
+   "count": 5
+ },
+ {
+   "name": "York Centre",
+   "ward": 10,
+   "firstname": "James",
+   "lastname": "Pasternak",
+   "email": "councillor_pasternak@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-james-pasternak/",
+   "phone": "416-392-1371",
+   "count": 15
+ },
+ {
+   "name": "York South-Weston",
+   "ward": 11,
+   "firstname": "Frances",
+   "lastname": "Nunziata",
+   "email": "councillor_nunziata@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-frances-nunziata/",
+   "phone": "416-392-4091",
+   "count": 8
+ },
+ {
+   "name": "York South-Weston",
+   "ward": 12,
+   "firstname": "Frank",
+   "lastname": "Di Giorgio",
+   "email": "councillor_digiorgio@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-frank-di-giorgio/",
+   "phone": "416-392-4066",
+   "count": 4
+ },
+ {
+   "name": "Parkdale-High Park",
+   "ward": 13,
+   "firstname": "Sarah",
+   "lastname": "Doucette",
+   "email": "councillor_doucette@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-sarah-doucette/",
+   "phone": "416-392-4072",
+   "count": 2
+ },
+ {
+   "name": "Parkdale-High Park",
+   "ward": 14,
+   "firstname": "Gord",
+   "lastname": "Perks",
+   "email": "councillor_perks@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-gord-perks/",
+   "phone": "416-392-7919",
+   "count": 15
+ },
+ {
+   "name": "Eglinton-Lawrence ",
+   "ward": 15,
+   "firstname": "Josh",
+   "lastname": "Colle",
+   "email": "councillor_colle@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-josh-colle/",
+   "phone": "416-392-4027",
+   "count": 5
+ },
+ {
+   "name": "Eglinton-Lawrence ",
+   "ward": 16,
+   "firstname": "Christin",
+   "lastname": "Carmichael Greb",
+   "email": "Councillor_CarmichaelGreb@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-christin-carmichael-greb/",
+   "phone": "416-392-4090",
+   "count": 10
+ },
+ {
+   "name": "Davenport",
+   "ward": 17,
+   "firstname": "Cesar",
+   "lastname": "Palacio",
+   "email": "councillor_palacio@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-cesar-palacio/",
+   "phone": "416-392-7011",
+   "count": 9
+ },
+ {
+   "name": "Davenport",
+   "ward": 18,
+   "firstname": "Ana",
+   "lastname": "Bailao",
+   "email": "councillor_bailao@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-ana-bailao/",
+   "phone": "416-392-7012",
+   "count": 8
+ },
+ {
+   "name": "Trinity-Spadina",
+   "ward": 19,
+   "firstname": "Mike",
+   "lastname": "Layton",
+   "email": "councillor_layton@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-mike-layton/",
+   "phone": "416-392-4009",
+   "count": 8
+ },
+ {
+   "name": "Trinity-Spadina",
+   "ward": 20,
+   "firstname": "Joe",
+   "lastname": "Cressy",
+   "email": "Councillor_Cressy@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-joe-cressy/",
+   "phone": "416-392-4044",
+   "count": 18
+ },
+ {
+   "name": "St. Paul's ",
+   "ward": 21,
+   "firstname": "Joe",
+   "lastname": "Mihevc",
+   "email": "councillor_mihevc@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-joe-mihevc/",
+   "phone": "416-392-0208",
+   "count": 9
+ },
+ {
+   "name": "St. Paul's ",
+   "ward": 22,
+   "firstname": "Josh",
+   "lastname": "Matlow",
+   "email": "councillor_matlow@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-josh-matlow/",
+   "phone": "416-392-7906",
+   "count": 6
+ },
+ {
+   "name": "Willowdale ",
+   "ward": 23,
+   "firstname": "John",
+   "lastname": " Filion",
+   "email": "councillor_filion@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-john-filion/",
+   "phone": "416-392-0210",
+   "count": 8
+ },
+ {
+   "name": "Willowdale ",
+   "ward": 24,
+   "firstname": "David",
+   "lastname": "Shiner",
+   "email": "councillor_shiner@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-david-shiner/",
+   "phone": "416-395-6413",
+   "count": 11
+ },
+ {
+   "name": "Don Valley West ",
+   "ward": 25,
+   "firstname": "Jaye",
+   "lastname": "Robinson",
+   "email": "councillor_robinson@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-jaye-robinson/",
+   "phone": "416-395-6408",
+   "count": 4
+ },
+ {
+   "name": "Don Valley West ",
+   "ward": 26,
+   "firstname": "Jon",
+   "lastname": "Burnside",
+   "email": "Councillor_Burnside@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-jon-burnside/",
+   "phone": "416-392-0215",
+   "count": 4
+ },
+ {
+   "name": "Toronto Centre-Rosedale ",
+   "ward": 27,
+   "firstname": "Kristyn",
+   "lastname": "Wong-Tam",
+   "email": "councillor_wongtam@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-kristyn-wong-tam/",
+   "phone": "416-392-7903",
+   "count": 15
+ },
+ {
+   "name": "Toronto Centre-Rosedale ",
+   "ward": 28,
+   "firstname": "Lucy",
+   "lastname": "Troisi",
+   "email": "Councillor_Troisi@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-ward-28/",
+   "phone": "416-392-7916",
+   "count": 12
+ },
+ {
+   "name": "Toronto-Danforth ",
+   "ward": 29,
+   "firstname": "Mary",
+   "lastname": "Fragedakis",
+   "email": "councillor_fragedakis@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-mary-fragedakis/",
+   "phone": "416-392-4032",
+   "count": 5
+ },
+ {
+   "name": "Toronto-Danforth ",
+   "ward": 30,
+   "firstname": "Paula",
+   "lastname": "Fletcher",
+   "email": "councillor_fletcher@toronto.ca",
+   "website": "http://www1.toronto.ca/wps/portal/contentonly?vgnextoid=20793293dc3ef310VgnVCM10000071d60f89RCRD",
+   "phone": "416-392-4060",
+   "count": 8
+ },
+ {
+   "name": "Beaches-East York",
+   "ward": 31,
+   "firstname": "Janet",
+   "lastname": "Davis",
+   "email": "councillor_davis@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-janet-davis/",
+   "phone": "416-392-4035",
+   "count": 7
+ },
+ {
+   "name": "Beaches-East York",
+   "ward": 32,
+   "firstname": "Mary-Margaret",
+   "lastname": "McMahon",
+   "email": "councillor_mcmahon@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-mary-margaret-mcmahon/",
+   "phone": "416-392-1376",
+   "count": 4
+ },
+ {
+   "name": "Don Valley East",
+   "ward": 33,
+   "firstname": "vacant",
+   "lastname": "",
+   "email": "ward_33@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-ward-33/",
+   "phone": "416-392-4038",
+   "count": 5
+ },
+ {
+   "name": "Don Valley East",
+   "ward": 34,
+   "firstname": "Denzil",
+   "lastname": "Minnan-Wong",
+   "email": "councillor_minnan-wong@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-denzil-minnan-wong/",
+   "phone": "416-397-9256",
+   "count": 6
+ },
+ {
+   "name": "Scarborough Southwest",
+   "ward": 35,
+   "firstname": "Michelle",
+   "lastname": "Holland",
+   "email": "Councillor_Holland@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-michelle-holland/",
+   "phone": "416-392-0213",
+   "count": 21
+ },
+ {
+   "name": "Scarborough Southwest",
+   "ward": 36,
+   "firstname": "Gary",
+   "lastname": "Crawford",
+   "email": "councillor_crawford@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-gary-crawford/",
+   "phone": "416-392-4052",
+   "count": 8
+ },
+ {
+   "name": "Scarborough Centre",
+   "ward": 37,
+   "firstname": "Michael ",
+   "lastname": "Thompson",
+   "email": "councillor_thompson@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-michael-thompson/",
+   "phone": "416-397-9274",
+   "count": 16
+ },
+ {
+   "name": "Scarborough Centre",
+   "ward": 38,
+   "firstname": "Glenn",
+   "lastname": "De Baeremaeker",
+   "email": "councillor_debaeremaeker@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-glenn-de-baeremaeker/",
+   "phone": "416-392-0204",
+   "count": 5
+ },
+ {
+   "name": "Scarborough-Agincourt ",
+   "ward": 39,
+   "firstname": "Jim",
+   "lastname": "Karygiannis",
+   "email": "councillor_karygiannis@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-jim-karygiannis/",
+   "phone": "416-392-1374",
+   "count": 8
+ },
+ {
+   "name": "Scarborough-Agincourt ",
+   "ward": 40,
+   "firstname": "Norman",
+   "lastname": "Kelly",
+   "email": "councillor_kelly@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-norm-kelly/",
+   "phone": "416-392-4047",
+   "count": 16
+ },
+ {
+   "name": "Scarborough-Rouge River",
+   "ward": 41,
+   "firstname": "Chin",
+   "lastname": "Lee",
+   "email": "councillor_lee@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-chin-lee/",
+   "phone": "416-392-1375",
+   "count": 10
+ },
+ {
+   "name": "Scarborough-Rouge River",
+   "ward": 42,
+   "firstname": "Neethan",
+   "lastname": "Shan",
+   "email": "councillor_shan@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-neethan-shan/",
+   "phone": "416-392-4078",
+   "count": 12
+ },
+ {
+   "name": "Scarborough East ",
+   "ward": 43,
+   "firstname": "Paul",
+   "lastname": "Ainslie",
+   "email": "councillor_ainslie@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-ward-43/",
+   "phone": "416-392-4008",
+   "count": 4
+ },
+ {
+   "name": "Scarborough East ",
+   "ward": 44,
+   "firstname": "Jim ",
+   "lastname": "Hart",
+   "email": "councillor_hart@toronto.ca",
+   "website": "https://www.toronto.ca/city-government/council/members-of-council/councillor-jim-hart/",
+   "phone": "416-392-1373",
+   "count": 4
+ }
+]
