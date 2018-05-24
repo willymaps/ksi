@@ -142,6 +142,7 @@ function getStage() {
     $("#barHold").empty();
 
     $('#wardHold').css('visibility', 'hidden');
+    $('#wardHold').css('display', 'none');
     // $('#wardHold').css('display', 'none');
     $('#streetviewHold').css('visibility', 'visible');
     $('#streetviewImg').css('visibility', 'visible');
@@ -164,10 +165,13 @@ function getStage() {
     $("#barHold").empty();
 
     $('#wardHold').css('visibility', 'visible');
+    $('#wardHold').css('display', 'block');
     // $('#wardHold').css('display', 'block');
     $('#streetviewHold').css('visibility', 'hidden');
     $('#streetviewImg').css('visibility', 'hidden');
     // $('#streetviewHold').css('display', 'none');
+  } else {
+    return false;
   }
 }
 
