@@ -303,20 +303,14 @@ $.getJSON( "./data/padfat.json", function( data ) {
   $.each(data, function( key, val ) {
   	if ($.inArray(val.YEAR, years) === -1) {
         years.push(val.YEAR);
-        // console.log('years', years);
-        // var val.YEAR + 'yr' = ([]);
     }
     allData.push(data[key]);
   });
 
-  // console.log('allData', allData);
-
   years.sort(function(a, b){return a-b});
   allData.sort(function(a, b){return a.YEAR-b.YEAR});
-  // console.log('allData sorted', allData);
 
   const yearsArray = years.map(function(item, key) {
-    // console.log('item', Array.of(years[key]));
     return Array.of(years[key]);
   });
 
@@ -363,15 +357,12 @@ $.getJSON( "./data/padfat.json", function( data ) {
     "</li>"
   }
 
-  // console.log('yearsArray', yearsArray);
-
   let colCount = 0;
   for (i=0;i<yearsArray.length;i++) {
 
       let columnName = 'column' + i;
       let columnNameCol = '#column' + i;
 
-    // } else if ( i && (i % 3 === 0)) {
       $('<div />', {
       "class": 'column',
       "id": columnName
@@ -382,20 +373,15 @@ $.getJSON( "./data/padfat.json", function( data ) {
       "id": yearsArray[i],
       html: yearsArray[i].join("")
     }).css('color', timeColors[i]).appendTo( columnNameCol);
-    // console.log('tagname', this.tagName);
   }
 
   var timer;
 
     $("li").hover(function(){
-        // console.log('data', data);
-        // console.log($(this).data("date"));
         clearTimeout(timer)
         $(this).css("border", "1px solid #333");
         $(this).css("cursor", "pointer");
         $('#popup').css("bottom", "0px");
-
-        // console.log('streets', $(this).data("streettwo").length);
 
         let streetnames;
 
@@ -411,13 +397,11 @@ $.getJSON( "./data/padfat.json", function( data ) {
         $('#popupRoad').text($(this).data("roadclass"));
 
       }, function() {
-        // console.log($(this).data("LIGHT"));
         $(this).css("border", "1px solid transparent");
         $(this).css("cursor", "inherit");
         timer = setTimeout( function(){
           $('#popup').css("bottom", "-160px");  
         }, 1000);
-          // $('#popup').css("bottom", "-120px");
     });
 }).done(function() {
   initStage();
@@ -482,12 +466,12 @@ $('#backBtn').click(function(e) {
 
 
 $('#columnWrap').click(function(e) {
-  console.log('clicked'); 
-  stage++;
-  $('#backBtn').css('opacity', 1);
-
-  getStage();
-  // e.stopPropagation();
+  console.log('clicked');
+  if (stage <= 7) {
+    stage++;
+    $('#backBtn').css('opacity', 1);
+    getStage();
+  }
   
 });
 
