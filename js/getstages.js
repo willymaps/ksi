@@ -35,15 +35,12 @@ function getStage() {
       let liParent = $(liElem).parent();
       $(liParent).css('color', '#333');
       $(this).css ('color', 'rgba(0,0,0,0.2)');
-      // console.log('time', $(this).data('light'));
       let lightText = ($(this).data('light')).slice(0, 9);
       $(this).text(lightText);
 
       $(this).css ('color', getDayLight($(this).data('light')));
 
     });
-
-    console.log('barChartArray', barChartArray);
 
     buildBar('light',barChartArray);
 
@@ -60,7 +57,6 @@ function getStage() {
     barChartArray = [];
 
     $('li').each(function() {
-      // console.log('age', ($(this).data('age')));
       barChartArray.push($(this).data('age'));
       $(this).text($(this).data('age'));
       $(this).css('color', getColour($(this).data('age')));
@@ -81,7 +77,6 @@ function getStage() {
     barChartArray = [];
 
     $('li').each(function() {
-      // console.log('vis', ($(this).data('vis')));
       barChartArray.push($(this).data('vis'));
       $(this).text($(this).data('vis'));
       $(this).css('color', 'rgba(0,0,0,1)');
@@ -189,13 +184,6 @@ function buildBar(def, arr) {
       counts[num] = counts[num] ? counts[num] + 1 : 1;
     };
 
-    // var result = Object.keys(counts).map(function(key) {
-    //   return [Number(key), counts[key]];
-    // });
-
-    // console.log('result', result);
-    // countSort.push(counts);
-
     for (var stat in counts) {
         countSort.push([stat, counts[stat]]);
     }
@@ -205,32 +193,7 @@ function buildBar(def, arr) {
     });
 
 
-    // console.log('max', Math.max(counts));
-
-    // console.log('sort soon');
-
-    // countSort.sort(function (a, b) {
-    //     console.log('val', a.val);
-    //     console.log('a', a);
-    //     console.log('b', b);
-    //     return a.val.localeCompare( b.val );
-    // });
-
-    
-
-
-
-    console.log('counts', counts);
-    console.log('count sort', countSort);
-    console.log('count sort', countSort[0]);
-
-    // $.each( countSort,function(key, val) {
-      // console.log('d', d[0]);
-      // console.log('key', key);
-      // console.log('key', val);
-
     countSort.forEach(function(val) {
-      // console.log('key', key);
       console.log('val', val);
 
       let countObj = Object.values(counts);
@@ -261,13 +224,6 @@ function buildBar(def, arr) {
         "class": 'bar'
         }).css('width', barWidth).css('background-color', getRoadClass(val[0])).appendTo("#barHold");
       }
-
-      // $('<p />').text(key).appendTo("#barHold");
-      // $('<span />', {
-      //   "class": 'bar'
-      //   }).css('width', barWidth).css('background-color', getColour(key)).appendTo("#barHold");
-
-
     });
 }
 
