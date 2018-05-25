@@ -296,7 +296,6 @@ const timeColors = [
 ];
 
 $.getJSON( "./data/padfat.json", function( data ) {
-  // console.log('data', data);
   
   const years = [];
   const allData = [];
@@ -411,7 +410,6 @@ $.getJSON( "./data/padfat.json", function( data ) {
 });
 
 $.getJSON( "./data/council.json", function( data ) {
-  console.log('data', data);
 
   var councilData = [];
   $.each(data, function( key, val ) {
@@ -448,8 +446,6 @@ var stage = 1;
 var time = 50;
 
 $('#backBtn').click(function(e) {
-  console.log('clicked');
-  console.log('stage back', stage);
   
   if (stage >= 3) {
     stage = stage - 1;
@@ -466,7 +462,6 @@ $('#backBtn').click(function(e) {
 
 
 $('#columnWrap').click(function(e) {
-  console.log('clicked');
   if (stage <= 7) {
     stage++;
     $('#backBtn').css('opacity', 1);
