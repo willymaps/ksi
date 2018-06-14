@@ -227,11 +227,33 @@ body h1 {
   opacity:0.5;
 }
 
+#chartHold {
+  position: relative;
+  display: block;
+  max-width: 530px;
+  left: 5%;
+  top: 45px;
+  pointer-events: none;
+}
+
+#chartHold img {
+  position: absolute;
+  left:0;
+  top:0;
+  width:100%;
+  pointer-events: none;
+  opacity:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+}
+
 @media (max-width:600px) {
   #columnWrap {
     height:550px;
   }
-  
+
   #columnText {
     top:0;
     left:0;
@@ -271,6 +293,13 @@ body h1 {
   </div>
   <div id="streetviewHold">
     <img id="streetviewImg" src="./img/streetview.png" alt="Streetview images of the locations where the incididents happened.">
+  </div>
+  <div id="chartHold">
+    <img id="rplot1" src="./img/rplot1.png">
+    <img id="rplot2" src="./img/rplot2.png">
+    <img id="rplot3" src="./img/rplot3.png">
+    <img id="rplot4" src="./img/rplot4.png">
+    <img id="rplot5" src="./img/rplot5.png">
   </div>
   <div id="wardHold">
   </div>
@@ -465,7 +494,7 @@ $('#backBtn').click(function(e) {
 
 
 $('#columnWrap').click(function(e) {
-  if (stage <= 7) {
+  if (stage <= 10) {
     stage++;
     $('#backBtn').css('opacity', 1);
     getStage();

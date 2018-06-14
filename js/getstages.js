@@ -136,39 +136,101 @@ function getStage() {
 
     $("#barHold").empty();
 
-    $('#wardHold').css('visibility', 'hidden');
-    $('#wardHold').css('display', 'none');
+    // $('#wardHold').css('visibility', 'hidden');
+    // $('#wardHold').css('display', 'none');
     // $('#wardHold').css('display', 'none');
     $('#streetviewHold').css('visibility', 'visible');
     $('#streetviewImg').css('visibility', 'visible');
     // $('#mapviewImg').css('visibility', 'hidden');
     // $('#mapviewImg').css('display', 'none');
+    $('#rplot1').css('opacity', 0);
 
   } else if (stage == 7) {
-
     $('#textHed').text(
-      'Ask your city councillor what they are doing to prevent further unneccessary deaths in their ward.'
+      '...'
     );
     $('#textDesc').text(
-        'Click on each ward to send an email to that councillor'
+        '...'
     );
 
-    $('ul').each(function() {
-      $(this).css('visibility', 'hidden');
-    });
-
-    $("#barHold").empty();
-
-    $('#wardHold').css('visibility', 'visible');
-    $('#wardHold').css('display', 'block');
-    // $('#wardHold').css('display', 'block');
+    $('#rplot1').css('opacity', 1);
+    $('#rplot2').css('opacity', 0);
     $('#streetviewHold').css('visibility', 'hidden');
     $('#streetviewImg').css('visibility', 'hidden');
-    // $('#streetviewHold').css('display', 'none');
+    
+  } else if (stage == 8) {
+    $('#textHed').text(
+      '...'
+    );
+    $('#textDesc').text(
+        '...'
+    );
+
+    // $('#rplot1').css('opacity', 0);
+    $('#rplot2').css('opacity', 1);
+    $('#rplot3').css('opacity', 0);
+    
+  } else if (stage == 9) {
+    $('#textHed').text(
+      '...'
+    );
+    $('#textDesc').text(
+        '...'
+    );
+
+    $('#rplot1').css('opacity', 0);
+    $('#rplot2').css('opacity', 0);
+    $('#rplot3').css('opacity', 1);
+    $('#rplot4').css('opacity', 0);
+    
+  } else if (stage == 10) {
+    $('#textHed').text(
+      '...'
+    );
+    $('#textDesc').text(
+        '...'
+    );
+
+    $('#rplot3').css('opacity', 0);
+    $('#rplot4').css('opacity', 1);
+    $('#rplot5').css('opacity', 0);
+    
+  } else if (stage == 11) {
+    $('#textHed').text(
+      '...'
+    );
+    $('#textDesc').text(
+        '...'
+    );
+
+    $('#rplot4').css('opacity', 0);
+    $('#rplot5').css('opacity', 1);
+    $('#rplot3').css('opacity', 1);
+    
   } else {
     return false;
   }
 }
+
+    // $('#textHed').text(
+    //   'Ask your city councillor what they are doing to prevent further unneccessary deaths in their ward.'
+    // );
+    // $('#textDesc').text(
+    //     'Click on each ward to send an email to that councillor'
+    // );
+
+    // $('ul').each(function() {
+    //   $(this).css('visibility', 'hidden');
+    // });
+
+    // $("#barHold").empty();
+
+    // $('#wardHold').css('visibility', 'visible');
+    // $('#wardHold').css('display', 'block');
+    // // $('#wardHold').css('display', 'block');
+    // $('#streetviewHold').css('visibility', 'hidden');
+    // $('#streetviewImg').css('visibility', 'hidden');
+    // // $('#streetviewHold').css('display', 'none');
 
 
 
