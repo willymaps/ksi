@@ -249,19 +249,64 @@ body h1 {
   -o-transition: opacity 1s ease-in-out;
 }
 
-@media (max-width:600px) {
+@media (max-width:880px) {
   #columnWrap {
     height:550px;
+  }
+  .column ul {
+    font-size:10px;
+  }
+
+  .column {
+    width: 25px;
+  }
+
+  .column li {
+    font-size: 5px;
+    width: 24px;
+  }
+
+  #chartHold {
+    max-width: 275px;
+    top: 210px;
+    pointer-events: none;
   }
 
   #columnText {
     top:0;
     left:0;
+    padding-top: 0;
     width:90%;
+    font-size: 12px;
+    line-height: 16px;
+    height: 180px;
+    overflow-y: scroll;
+    -ms-overflow-style: none;  // IE 10+
+    overflow: -moz-scrollbars-none;  // Firefox
+  }
+
+  #columnText::-webkit-scrollbar { 
+      display: none;  // Safari and Chrome
   }
 
   #columnHold {
-    display: none;
+    /*display: none;*/
+    top: 200px;
+    width:300px;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+  }
+
+  #streetviewHold img {
+    height: 300px;
+    top: 188px;
+  }
+
+  #textHed {
+    font-size: 16px;
+    line-height: 20px;
   }
 
 

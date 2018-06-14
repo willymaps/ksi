@@ -147,10 +147,10 @@ function getStage() {
 
   } else if (stage == 7) {
     $('#textHed').text(
-      '...'
+      'Vehicle traffic across the city'
     );
     $('#textDesc').text(
-        '...'
+        'Each dot in the chart represents the percentage of all car traffic over an 8-hour period within every 100m buffer eminating from Bay st. and King st. The line represents the underlying pattern of this data.'
     );
 
     $('#rplot1').css('opacity', 1);
@@ -160,10 +160,10 @@ function getStage() {
     
   } else if (stage == 8) {
     $('#textHed').text(
-      '...'
+      'Pedestrian traffic across the city'
     );
     $('#textDesc').text(
-        '...'
+        'As you can see, pedestrian traffic is highly concentrated in the downtown core.'
     );
 
     // $('#rplot1').css('opacity', 0);
@@ -172,10 +172,10 @@ function getStage() {
     
   } else if (stage == 9) {
     $('#textHed').text(
-      '...'
+      'Percentage of every killed or seriously injured occurence (2007-2017)'
     );
     $('#textDesc').text(
-        '...'
+        'By 100m intervals eminating from Bay st. and King st.'
     );
 
     $('#rplot1').css('opacity', 0);
@@ -185,10 +185,10 @@ function getStage() {
     
   } else if (stage == 10) {
     $('#textHed').text(
-      '...'
+      'As pedestrian and vehicle traffic percentage changes...'
     );
     $('#textDesc').text(
-        '...'
+        ''
     );
 
     $('#rplot3').css('opacity', 0);
@@ -197,15 +197,15 @@ function getStage() {
     
   } else if (stage == 11) {
     $('#textHed').text(
-      '...'
+      '...the percentage of killed or seriously injured victims flatlines.'
     );
     $('#textDesc').text(
-        '...'
+        'Even as pedestrian traffic decreases, those killed or seriously injured remains almost the same as the heavily populated downtown core.'
     );
 
     $('#rplot4').css('opacity', 0);
     $('#rplot5').css('opacity', 1);
-    $('#rplot3').css('opacity', 1);
+    $('#rplot3').css('opacity', 0.5);
     
   } else {
     return false;
