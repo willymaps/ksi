@@ -144,15 +144,17 @@ function getStage() {
     // $('#mapviewImg').css('visibility', 'hidden');
     // $('#mapviewImg').css('display', 'none');
     $('#rplot1').css('opacity', 0);
+    $('#rplotNote').css('visibility', 'hidden');
 
   } else if (stage == 7) {
     $('#textHed').text(
       'Vehicle traffic across the city'
     );
     $('#textDesc').text(
-        'Each dot in the chart represents the percentage of all car traffic over an 8-hour period within every 100m buffer eminating from Bay st. and King st. The line represents the underlying pattern of this data.'
+        'Each dot in the chart represents the percentage of all car traffic over an 8-hour period within every 100m buffer eminating from Bay St. and King St. The line represents the underlying pattern of this data.'
     );
 
+    $('#rplotNote').css('visibility', 'visible');
     $('#rplot1').css('opacity', 1);
     $('#rplot2').css('opacity', 0);
     $('#streetviewHold').css('visibility', 'hidden');
@@ -163,7 +165,7 @@ function getStage() {
       'Pedestrian traffic across the city'
     );
     $('#textDesc').text(
-        'As you can see, pedestrian traffic is highly concentrated in the downtown core.'
+        'Pedestrian traffic is highly concentrated in the downtown core.'
     );
 
     // $('#rplot1').css('opacity', 0);
@@ -185,7 +187,7 @@ function getStage() {
     
   } else if (stage == 10) {
     $('#textHed').text(
-      'As pedestrian and vehicle traffic percentage changes...'
+      'As pedestrian and vehicle traffic changes...'
     );
     $('#textDesc').text(
         ''
@@ -206,6 +208,38 @@ function getStage() {
     $('#rplot4').css('opacity', 0);
     $('#rplot5').css('opacity', 1);
     $('#rplot3').css('opacity', 0.5);
+    
+  } else if (stage == 12) {
+    $('#textHed').text(
+      'There is a noticable pattern'
+    );
+    $('#textDesc').text(
+        'Older people on less pedestrian friendly roadways are more likely to get killed or seriously injured by a car. Regardless of visibility, road design and speed are clearly a factor in reducing the amount of victims.'
+    );
+
+    $('#rplot4').css('opacity', 1);
+    $('#rplot5').css('opacity', 0);
+    $('#rplot3').css('opacity', 1);
+
+    $('#wardHold').css('opacity', 0);
+    $('#wardHold').css('pointer-events', 'none');
+
+    $('#rplotNote').css('visibility', 'visible');
+    
+  } else if (stage == 13) {
+    $('#textHed').text(
+      ''
+    );
+    $('#textDesc').text(
+         ''
+    );
+
+    $('#wardHold').css('opacity', 1);
+    $('#wardHold').css('pointer-events', 'inherit');
+
+    $('#rplot4').css('opacity', 0);
+    $('#rplot3').css('opacity', 0);
+    $('#rplotNote').css('visibility', 'hidden');
     
   } else {
     return false;

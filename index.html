@@ -7,13 +7,15 @@
 <link href="./css/textstyle.css" rel="stylesheet" type="text/css">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 </head>
 <style>
 body {
-  font-size:7px;
+  /*font-size:7px;*/
   font-family: helvetica, sans-serif;
   background-color: #000;
-  color:#fff;
+  /*color:#fff;*/
   margin:0;
 }
 
@@ -69,6 +71,7 @@ body h1 {
 #barHold p {
   font-size: 10px;
   margin: 0;
+  color: #FFF;
 }
 
 #barHold span {
@@ -130,7 +133,8 @@ body h1 {
   cursor: pointer;
 }
 
-#textHed {
+#textHed, #wardTextHead {
+  color:#FFF;
   font-size:20px;
   line-height: 24px;
 }
@@ -190,9 +194,32 @@ body h1 {
 
 #wardHold {
   position: absolute;
-  visibility: hidden;
-  left: 5%;
+  pointer-events: none;
   top: 45px;
+  z-index: 100;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 300px;
+  opacity: 0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+}
+
+#select2-nntg-container {
+  color: #555;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+
+#councilTextWrap {
+  font-size: 14px;
+  line-height: 18px;
+  color: #FFF;
+  max-width:300px;
 }
 
 #streetviewHold img {
@@ -249,7 +276,29 @@ body h1 {
   -o-transition: opacity 1s ease-in-out;
 }
 
+#rplotNote {
+    visibility: hidden;
+    position: absolute;
+    top:400px;
+    font-size: 10px;
+    color: #FFF;
+}
+
+#clickHold {
+  margin-top:25px;
+}
+
+#clickHold img {
+    width: 45px;
+    vertical-align: middle;
+    margin-left:5px;
+}
+
 @media (max-width:880px) {
+  #popup {
+    display: none;
+  }
+
   #columnWrap {
     height:550px;
   }
@@ -268,7 +317,11 @@ body h1 {
 
   #chartHold {
     max-width: 275px;
+    margin: auto;
     top: 210px;
+    width: 100%;
+    left: 0;
+    /*height: 300px;*/
     pointer-events: none;
   }
 
@@ -301,17 +354,16 @@ body h1 {
 
   #streetviewHold img {
     height: 300px;
-    top: 188px;
+    top: 200px;
   }
 
-  #textHed {
+  #textHed, #wardTextHead {
     font-size: 16px;
     line-height: 20px;
   }
 
-
-  #wardHold {
-    top:220px;
+  #rplotNote {
+    top: 215px;
   }
 
 }
@@ -345,8 +397,17 @@ body h1 {
     <img id="rplot3" src="./img/rplot3.png">
     <img id="rplot4" src="./img/rplot4.png">
     <img id="rplot5" src="./img/rplot5.png">
+    <div id="rplotNote">
+      Note: chart is truncated. Some of the 100m intervals of pedestrian traffic in the downtown core were greater than 4%. It was truncated to highlight the areas between 5 and 15km from the downtown core.
+    </div>
   </div>
   <div id="wardHold">
+    <p id="wardTextHead">Tell your councillor</p>
+    <select class="wardDropdown" onchange="getCouncilText(this)"></select>
+    <div id="councilTextWrap">
+      <p>There have been <span id="councilText">7</span> vulnerable road user deaths in your ward from 2007-2017. I want to know what you are doing about this growing issue in the city and specifically in your ward. Too many innocent lives have been lost. The City's <a href="https://www.toronto.ca/wp-content/uploads/2017/11/990f-2017-Vision-Zero-Road-Safety-Plan_June1.pdf" target="blank">Vision Zero Road Safey Plan</a> needs to move forward.</p>
+      <span id="councilEmail">councillor_crisanti@toronto.ca</span>
+    </div>
   </div>
 </div>
 
@@ -357,6 +418,8 @@ body h1 {
 <script>
 
 var barChartArray = [];
+var councilData = [];
+var councilNames = [];
 
 const timeColors = [
 '#3E2230',
@@ -371,6 +434,16 @@ const timeColors = [
 '#E7796F',
 '#FA8572'
 ];
+
+function getCouncilText(p) {
+  var dataMatch = $(p).find(':selected').data('select2-id');
+  var dataMatchNum = dataMatch - 2;
+
+  console.log(councilData[dataMatchNum]);
+
+  $('#councilText').html(councilData[dataMatchNum].count);
+  $('#councilEmail').html(councilData[dataMatchNum].email);
+}
 
 $.getJSON( "./data/padfat.json", function( data ) {
   
@@ -487,34 +560,17 @@ $.getJSON( "./data/padfat.json", function( data ) {
 });
 
 $.getJSON( "./data/council.json", function( data ) {
-
-  var councilData = [];
+// $.getJSON( council, function( data ) {
+  
   $.each(data, function( key, val ) {
     councilData.push(data[key]);
+    councilNames.push('Ward – ' + data[key].ward + " " + data[key].firstname + " " + data[key].lastname);
   });
-
-  var table = document.createElement('table');
-  // console.log('table length', councilData.length);
-  // console.log('table length', councilData[i]);
-    for (var i = 0; i < councilData.length; i++){
-      // console.log('table pieces', councilData[i]);
-
-    $('<div />', {
-      "class": 'wards',
-      // "id": columnName,
-      "html": getCouncilInfo(councilData[i])
-    }).appendTo("#wardHold");
-
-    }
-
-  function getCouncilInfo(data) {
-    console.log('data', data);
-    return  "<b>" + data.count + " killed" + "</b> – <span class='councillorName'><a href='mailto:" + data.email + "'>" + "in Ward " + data.ward + " " + data.firstname + " " + data.lastname + " (" + data.email + ')</a></span>'
-  }
-
 }).done(function() {
-  console.log('done');
-
+  // console.log('council', councilData);
+  $(".wardDropdown").select2({
+    data: councilNames
+  });
 }).fail(function() {
   console.log('error')
 });
@@ -539,7 +595,7 @@ $('#backBtn').click(function(e) {
 
 
 $('#columnWrap').click(function(e) {
-  if (stage <= 10) {
+  if (stage <= 12) {
     stage++;
     $('#backBtn').css('opacity', 1);
     getStage();
@@ -552,8 +608,8 @@ function initStage() {
     $('#textHed').text(
       'What 11 Years of Pedestrian and Cyclist Deaths in Toronto can tell us'
     );
-    $('#textDesc').text(
-        'The Toronto Police Service has recently updated their traffic related fatality numbers, which include all incidents and their attribute information between 2007 and 2017... (click to continue)'
+    $('#textDesc').html(
+        'The Toronto Police Service has recently updated their traffic related fatality numbers, which include all incidents and their attribute information between 2007 and 2017.' + '<br>' + '<div id="clickHold"><span>' + 'Click to continue' + '</span><img src="./img/pointer.png">' + '</div>'
     );
 
     $('li').each(function() {
