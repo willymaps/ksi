@@ -268,7 +268,7 @@ body h1 {
     position: absolute;
     top:400px;
     font-size: 10px;
-    color: #FFF;
+    color: rgba(255,255,255,0.7);
 }
 
 #clickHold {
@@ -288,6 +288,7 @@ body h1 {
 
   #columnWrap {
     height:550px;
+    overflow: initial;
   }
   .column ul {
     font-size:10px;
@@ -300,6 +301,10 @@ body h1 {
   .column li {
     font-size: 5px;
     width: 24px;
+  }
+
+  #clickHold {
+    margin-top: 15px;
   }
 
   #chartHold {
@@ -336,7 +341,8 @@ body h1 {
     left: 0; 
     right: 0; 
     margin-left: auto; 
-    margin-right: auto; 
+    margin-right: auto;
+    pointer-events: none;
   }
 
   #streetviewHold img {

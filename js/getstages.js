@@ -177,7 +177,7 @@ function getStage() {
       'Percentage of every killed or seriously injured occurence (2007-2017)'
     );
     $('#textDesc').text(
-        'By 100m intervals eminating from Bay st. and King st.'
+        ''
     );
 
     $('#rplot1').css('opacity', 0);
@@ -214,7 +214,7 @@ function getStage() {
       'There is a noticable pattern'
     );
     $('#textDesc').text(
-        'Older people on less pedestrian friendly roadways are more likely to get killed or seriously injured by a car. Regardless of visibility, road design and speed are clearly a factor in reducing the amount of victims.'
+        'Older people on less pedestrian friendly roadways are more likely to get killed or seriously injured by a car. Regardless of visibility, road design and speed are clearly a factor.'
     );
 
     $('#rplot4').css('opacity', 1);
